@@ -1,0 +1,19 @@
+This is a user guide to the final project code 
+
+1. import all necessary packages
+The packages necessary for this project include:
+- numpy and pandas (for data manipulation)
+- sklearn
+- from sklearn, StandardScaler (for scaling the data)
+- from sklearn, train_test_split (for splitting the data into training and test sets)
+- from sklearn, GridSearchCV (optional - for optimizing RandomForestClassifier parameters)
+- from sklearn, RandomForestClassifier (the model used in this analysis)
+
+2. import dataset
+
+
+3. manipulate the dataset
+
+4. create, train, and test random forest classifier
+
+5. (optional) optimize RandomForestClassifier parameters 
