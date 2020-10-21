@@ -1,0 +1,8 @@
+print(accuracy_score(y_test, y_pred))
+print(confusion_matrix(y_test, y_pred))
+print(accuracy_score(y_pred, y_test))
+
+0.75
+[[ 9  4]
+ [ 6 21]]
+0.75
