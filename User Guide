@@ -1,19 +1,36 @@
-This is a user guide to the final project code 
+#This is a user guide to the final project code 
 
-1. import all necessary packages
-The packages necessary for this project include:
-- numpy and pandas (for data manipulation)
-- sklearn
-- from sklearn, StandardScaler (for scaling the data)
-- from sklearn, train_test_split (for splitting the data into training and test sets)
-- from sklearn, GridSearchCV (optional - for optimizing RandomForestClassifier parameters)
-- from sklearn, RandomForestClassifier (the model used in this analysis)
+# 1. import all necessary packages
+# The packages necessary for this project include:
+# numpy and pandas (for data manipulation)
+# sklearn
+# from sklearn, StandardScaler (for scaling the data)
+# from sklearn, train_test_split (for splitting the data into training and test sets)
+# from sklearn, GridSearchCV (optional - for optimizing RandomForestClassifier parameters)
+# from sklearn, RandomForestClassifier (the model used in this analysis)
 
-2. import dataset
+# 2. import dataset
+# While there are many ways to upload a dataset from Kaggle into your environment, I followed the steps laid out here: https://medium.com/analytics-vidhya/how-to-fetch-kaggle-datasets-into-google-colab-ea682569851a 
+# make a kaggle account
+# under account, click on "create new API token"
+# in your google drive, create a new folder called "kaggle_dataset"
+# upload the kaggle.json file into this folder
+# in Google Colab, mount the drive 
+#from google.colab import drive
+drive.mount('/content/gdrive')
+# enter in the authorization code provided when following the link
+# run the following code 
+import os
+os.environ['KAGGLE_CONFIG_DIR'] = "/content/gdrive/My Drive/kaggle_dataset"
+# change your working directory to your drive in this folder
+# copy the API command from Kaggle, unzip the file and read the csv
+# optional: visualize the dataset
 
+# 3. manipulate the dataset
+# The dataset needs manipulation to be ready for the random forest classification. Specifically, the following need to occur:
+# - 
+# To fix this, 
 
-3. manipulate the dataset
+# 4. create, train, and test random forest classifier
 
-4. create, train, and test random forest classifier
-
-5. (optional) optimize RandomForestClassifier parameters 
+# 5. (optional) optimize RandomForestClassifier parameters 
