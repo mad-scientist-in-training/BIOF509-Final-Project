@@ -28,9 +28,21 @@ os.environ['KAGGLE_CONFIG_DIR'] = "/content/gdrive/My Drive/kaggle_dataset"
 
 # 3. manipulate the dataset
 # The dataset needs manipulation to be ready for the random forest classification. Specifically, the following need to occur:
-# - 
-# To fix this, 
+# - drop the first 42 columns, as they contain information we don't need
+# - change the name of the Participant code, since the space is annoying and throwing error when we try to use it. Renaming to 'class'
+# - changing the class (which has Parkinson's disease patients coded as PD01-X) to single letters codes for easier readability, and eventually to numbers for binary classification for the random forest classifier
+# - scaling the dataset using Standard Scaler. We don't want to scale the "class" feature, so we essentially created a new dataset without that feature, scaled it, and then appended the class column to the end of this new scaled dataset
+# - for continuity, we change the "class" feature to "24" since it looks better, but is unnecessary
+# df_new_1 is now cut down to include only the data we're interested in, scaled, has integer values for the class values, and is ready for analysis
 
 # 4. create, train, and test random forest classifier
+# - divide the data for random forest input: the first 24 columns of the data are for "X" - the feature variable - and the last column (class) is for "y" - the target variable
+# - split the data into training and test sets. (NOTE: I played around with the parameters for this and the optimal test size was 50% with a random state of 0)
+# - create the Random Forest Classifier object (NOTE: I played around with the parameters for this and the optimal parameters are included in the code)
+# - iterate it over the X_train variable to get y_pred
 
-# 5. (optional) optimize RandomForestClassifier parameters 
+# 5. Measure the accuracy of the algorithm
+# - use the accuracy_score and confusion_matrix creation functions to predict how accurate the model is on predicting class of the test set
+
+# 6. (optional) optimize RandomForestClassifier parameters 
+# - use GridSearchCV to optimize the parameters in the RandomForestClassifier
